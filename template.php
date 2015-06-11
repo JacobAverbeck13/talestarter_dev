@@ -1,5 +1,18 @@
 <?php
+session_start();
+include "database_connection.php";
+if(isset($_SESSION["user_id"]) == false){
+	$_SESSION["user_id"] = -1;
+}
+$user_id = $_SESSION["user_id"];
+
+$url_base = $_SERVER['SERVER_NAME'];
+
 function print_header (){
+	if(isset($_SESSION["user_id"]) == false){
+	$_SESSION["user_id"] = -1;
+	}
+	$user_id = $_SESSION["user_id"];
 	echo '<!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +48,7 @@ function print_header (){
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="home.php">
                         TaleStarter
                     </a>
                 </li>
@@ -49,27 +62,33 @@ function print_header (){
                     <a href="#">Contribute</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="more_info.php">More Info</a>
                 </li>
-                <li>
-                    <a href="#">Logout</a>
-                </li>
+                <li>';
+				
+				if($_SESSION["user_id"] > 0){
+				echo '<a href="logout.php">Logout</a>';
+				}
+				else{
+				echo '<a href="login.php">LogIn</a>';
+				}
+                echo '</li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-<div class="col-lg-12">';
+           ';
 }
 
-function print_footer (){	
+function print_footer (){
+	if(isset($_SESSION["user_id"]) == false){
+	$_SESSION["user_id"] = -1;
+	}
+	$user_id = $_SESSION["user_id"];
 	echo '
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!-- /#page-content-wrapper -->
 
