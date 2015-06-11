@@ -23,15 +23,20 @@ if(isset($_POST['logIn'])){
 	}
 	
 	//check password
-	if(password_verify($_POST['pass'], $_pass)){
+	if(password_verify($_POST['pass'], $_pass) == true){
 		$_SESSION['user_id'] = $select['id'];
+		header("Location: home.php"); /* Redirect browser */
+		exit();
 	}else{
-		echo "Logged failed.";
-	}
-	header("Location: home.php"); /* Redirect browser */
-	exit(); 
+		login_form();
+		echo "</br></br>Logged failed.";
+	} 
 }else{
-	print_header(); 
+	login_form();
+}
+
+function login_form(){
+		print_header(); 
 
 	echo '
 	<h1>LogIn</h1>
@@ -47,6 +52,7 @@ if(isset($_POST['logIn'])){
 	</td></tr></table>
 	</form>
 	</br></br></br></br><a href="signup.php" class="btn btn-info" role="button">Create Account</a>';
+	
 }	
 ?>
 

@@ -8,6 +8,14 @@ $user_id = $_SESSION["user_id"];
 
 $url_base = $_SERVER['SERVER_NAME'];
 
+function validate_login(){
+	if(isset($_SESSION["user_id"]) == false || $_SESSION["user_id"] == -1){
+	$_SESSION["user_id"] = -1;
+	header("Location: login.php"); /* Redirect browser */
+	exit();
+	}
+}
+
 function print_header (){
 	if(isset($_SESSION["user_id"]) == false){
 	$_SESSION["user_id"] = -1;
@@ -27,7 +35,7 @@ function print_header (){
     <title>TaleStarter</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
