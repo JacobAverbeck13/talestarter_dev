@@ -4,15 +4,29 @@ include "database_connection.php";
 if(isset($_SESSION["user_id"]) == false){
 	$_SESSION["user_id"] = -1;
 }
-$user_id = $_SESSION["user_id"];
 
 $url_base = $_SERVER['SERVER_NAME'];
 
-function validate_login(){
-	if(isset($_SESSION["user_id"]) == false || $_SESSION["user_id"] == -1){
-	$_SESSION["user_id"] = -1;
-	header("Location: login.php"); /* Redirect browser */
-	exit();
+function validate_login($userid, $redirect){
+	if(isset( $_SESSION["user_id"]) && $_SESSION["user_id"] != -1){ //if session user is set
+		if($userid == -1 || $userid ==  $_SESSION["user_id"]){ //if user matches
+			return true;
+		}else{ //user doesn't match
+			if(isset($redirect) && $redirect == true){
+				$_SESSION["user_id"] = -1;
+				header("Location: login.php"); /* Redirect browser */
+				exit();
+			}
+			return false;
+		}
+		return true;
+	}else{ //user is not set
+		if(isset($redirect) && $redirect == true){
+			$_SESSION["user_id"] = -1;
+			header("Location: login.php"); /* Redirect browser */
+			exit();
+		}
+		return false;
 	}
 }
 
@@ -61,10 +75,7 @@ function print_header (){
                     </a>
                 </li>
                 <li>
-                    <a href="#">Discover</a>
-                </li>
-                <li>
-                    <a href="#">Write</a>
+                    <a href="discover.php">Discover</a>
                 </li>
                 <li>
                     <a href="#">Contribute</a>

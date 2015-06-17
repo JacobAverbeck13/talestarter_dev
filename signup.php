@@ -60,7 +60,9 @@ if(isset($_POST['SignUp'])){
 	signup_form();
 }	
 	function signup_form(){
-		echo '<form action="" method="POST">
+		echo '
+		<div class="col-lg-12"><a href="home.php" class="btn btn-info" role="button">< Home</a></div></br></br>
+		<form action="" method="POST">
 	<table><tr>
 	<td style="padding: 10px;">Username</td> <td style="padding: 10px;"><input type="text" name="username"></td>
 	</tr>

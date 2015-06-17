@@ -3,6 +3,7 @@
 	print_header();
 ?>
 <div class="container-fluid">
+<div class="col-lg-12"><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br></div>
 	<div class="row">
 		<div class="col-lg-12">
 		<h1>More Info</h1>
@@ -20,7 +21,7 @@
 				<p style="font-size:18px;">
 					The <b>Tasks</b> system will allow authors to ask for outside input with certain
 					small portions of their story, such as object descriptions or the back-story of a minor character.
-					This provides writers the opportunity to build off the strengths of other writers while still giving them
+					This provides writers with the opportunity to build off the strengths of other writers while still giving them
 					complete control over what is added into their story. 
 					
 				</p>
@@ -98,8 +99,8 @@
 				variety of stories. You can show your support by rating stories that you have read.
 				This is highly important because it gives writers feedback as well as helping to identify talented writers.
 				</br></br>
-				In the future it will be possible for readers to donate to the causes of these writers to help them generate
-				the money required to higher professional editors and publishers. So that readers can say they helped get a story published.
+				<!--In the future it will be possible for readers to donate to the causes of these writers to help them generate
+				the money required to hire professional editors and publishers. So that readers can say they helped get a story published. -->
 			</p>
 
 		</div>

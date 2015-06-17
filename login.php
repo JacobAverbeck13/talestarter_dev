@@ -25,6 +25,7 @@ if(isset($_POST['logIn'])){
 	//check password
 	if(password_verify($_POST['pass'], $_pass) == true){
 		$_SESSION['user_id'] = $select['id'];
+		$_SESSION["username"] = $select['username'];
 		header("Location: home.php"); /* Redirect browser */
 		exit();
 	}else{
@@ -39,6 +40,7 @@ function login_form(){
 		print_header(); 
 
 	echo '
+	<div class="col-lg-12"><a href="home.php" class="btn btn-info" role="button">< Home</a></div></br></br>
 	<h1>LogIn</h1>
 	<form action="" method="POST">
 	<table><tr>

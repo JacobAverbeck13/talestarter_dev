@@ -1,11 +1,12 @@
 <?php
 	include "template.php";
-	validate_login();
+	validate_login(-1,true);
 if(isset($_POST['create']) && $_POST['create']=="true"){
 	
 	$title = addslashes($_POST['s_title']);
 	$when = addslashes($_POST['s_when']);
 	$where = addslashes($_POST['s_where']);
+	$user_id = $_SESSION['user_id'];
 	$query1 = "INSERT INTO `story`
 	(`story_id`, `text`, `created_on`)
 	VALUES (NULL, 'Empty Story', CURRENT_TIMESTAMP);";
@@ -30,6 +31,7 @@ if(isset($_POST['create']) && $_POST['create']=="true"){
 	print_header();
 	echo '
 	 <div class="container-fluid">
+	 <div class="col-lg-12"><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br></div>
 		<div class="row">
 			<div class="col-lg-12">
 			<style>

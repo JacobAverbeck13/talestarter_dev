@@ -180,13 +180,21 @@ textarea {
 optgroup {
   font-weight: bold;
 }
-table {
+table { 
   border-spacing: 0;
   border-collapse: collapse;
 }
-td,
+td{
+  background-color: #A0FAF3;
+  border: 2px solid #737373;
+  font-size: 17px;
+  padding: 3px;
+}
 th {
-  padding: 0;
+  background-color: #5BC0DE;
+  border: 2px solid #737373;
+  font-size: 20px;
+  padding: 3px;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
