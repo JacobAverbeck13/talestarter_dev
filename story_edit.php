@@ -4,6 +4,7 @@
 	echo '<script src="ckeditor/ckeditor.js"></script>';
 	
 if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
+	print_header();
 	if(isset($_POST['save']) && $_POST['save']=="true"){
 		$text = addslashes($_POST['s_text']);
 		$story_info_id = $_SESSION['s_i']["s_info_id"];
@@ -27,11 +28,13 @@ if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 				$query2 = "DELETE FROM `story`
 				WHERE `story_id` = '$story_remove';";	
 				db_update($query2);
+				echo "Story saved";
+			}else{
+				echo "Story <b>failed</b> to save";
 			}
 		}
 		
 	}
-	print_header();
 	//pull current story id
 	$story_info_id = $_GET['s_id'];
 	$query = "SELECT * FROM `story_info` WHERE `s_info_id` = '$story_info_id'";

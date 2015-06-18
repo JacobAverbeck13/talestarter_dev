@@ -1,8 +1,11 @@
 <?php
 	include "template.php";
 	print_header();
-
-	$query = "SELECT * FROM `story_info` LIMIT 10";
+	
+	//$query = "SELECT * FROM `story_info` LIMIT 10";
+	$query = "select a.`s_info_id`, a.`owner_id`, a.`story_id`, a.`title`, b.username 
+				FROM story_info  a 
+				LEFT JOIN users b ON a.`owner_id` = b.id LIMIT 10;";
 	$user_stories = db_select_multi($query);		
 
 	echo "
@@ -12,11 +15,11 @@
 			<div class='col-lg-12'>
 			
 			<h1>View New Stories</h1></br>";
-	echo "<table class='col-lg-5'><th>Story Title</th><th>Options</th>";
+	echo "<table class='col-lg-5'><th>Story Title</th><th>Author</th><th>Options</th>";
 	foreach($user_stories as $story){
 		echo "<tr>
 		<td>
-		".$story["title"]."
+		".$story["title"]."</td> <td>".$story['username']."
 		</td>
 		<td>
 		<a href='story_view.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>View</a>

@@ -78,7 +78,7 @@ function print_header (){
                     <a href="discover.php">View Stories</a>
                 </li>
                 <li>
-                    <a href="#">Contribute</a>
+                    <a href="tasks.php">Contribute</a>
                 </li>
                 <li>
                     <a href="more_info.php">More Info</a>
