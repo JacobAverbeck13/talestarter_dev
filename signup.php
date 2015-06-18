@@ -1,6 +1,6 @@
 <?php include "template.php"; print_header(); ?>
+<div class="col-lg-7"></div><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br>
 <h1>SignUp</h1>
-
 <?php
 if(isset($_POST['SignUp'])){
 	signup_form();
@@ -61,7 +61,6 @@ if(isset($_POST['SignUp'])){
 }	
 	function signup_form(){
 		echo '
-		<div class="col-lg-12"><a href="home.php" class="btn btn-info" role="button">< Home</a></div></br></br>
 		<form action="" method="POST">
 	<table><tr>
 	<td style="padding: 10px;">Username</td> <td style="padding: 10px;"><input type="text" name="username"></td>

@@ -7,11 +7,11 @@
 
 	echo "
 	 <div class='container-fluid'>
-	 <div class='col-lg-12'><a href='home.php' class='btn btn-info' role='button'>< Home</a></div>
+	 <div class='col-lg-7'></div><a href='home.php' class='btn btn-info' role='button'>< Home</a>
 		<div class='row'>
 			<div class='col-lg-12'>
 			
-			<h1>Discover New Stories</h1></br>";
+			<h1>View New Stories</h1></br>";
 	echo "<table class='col-lg-5'><th>Story Title</th><th>Options</th>";
 	foreach($user_stories as $story){
 		echo "<tr>

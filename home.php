@@ -41,7 +41,7 @@
 			 prior to hiring an editor or publisher.
 			  </br></br>
 			 <a href='more_info.php' class='btn btn-info' role='button'>More Info</a>
-			 <a href='discover.php' class='btn btn-info' role='button'>Discover</a>
+			 <a href='discover.php' class='btn btn-info' role='button'>View Stories</a>
 			 </p>
 
 			</div>

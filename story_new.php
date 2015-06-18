@@ -31,7 +31,7 @@ if(isset($_POST['create']) && $_POST['create']=="true"){
 	print_header();
 	echo '
 	 <div class="container-fluid">
-	 <div class="col-lg-12"><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br></div>
+	 <div class="col-lg-7"></div><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br>
 		<div class="row">
 			<div class="col-lg-12">
 			<style>

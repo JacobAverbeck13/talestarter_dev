@@ -40,7 +40,7 @@ function login_form(){
 		print_header(); 
 
 	echo '
-	<div class="col-lg-12"><a href="home.php" class="btn btn-info" role="button">< Home</a></div></br></br>
+	<div class="col-lg-7"></div><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br>
 	<h1>LogIn</h1>
 	<form action="" method="POST">
 	<table><tr>
