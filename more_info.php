@@ -3,9 +3,8 @@
 	print_header();
 ?>
 <div class="container-fluid">
-<div class="col-lg-7"></div><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br>
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-8">
 		<h1>More Info</h1>
 		</br>
 		</br>
@@ -34,44 +33,49 @@
 				</p>
 			</li>
 		</div>
+		</br></br></br><a href="home.php" class="btn btn-info" role="button">< Home</a>
 	</div>
 	</br></br></br>
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-8">
 		<h2>Why Use TaleStarter?</h2>
 			<p class="col-lg-12" style="font-size:20px;">
 				<strong>Authors</strong>: TaleStarter provides authors with a wide range of tools and securities not instinctively
-				native to other text processors. which include...
+				native to other text processors. These tools include...
 			</p>
+			<div class="col-lg-12">
 			<li class="col-lg-12">
 				<p style="font-size:18px;">
-					On-line Storage: All stories are stored on the server so you can have instant access to your up-to-date story
-					from anywhere. However stories can still be downloaded and saved locally if desired. 
+					Online Storage: All stories are stored on the server so you can have instant access to your up-to-date story
+					from anywhere.
 				</p>
 			</li>
 			<li class="col-lg-12">
 				<p style="font-size:18px;">
-					Version Control: The server will keep track of changes made to your story, that way if there is a tragic
+					<b style='color:rgb(255, 145, 0);'>Coming Soon -</b> Version Control: The server will keep track of the last 3 saved changes made to your story, that way if there is a tragic
 					accident you can just reload a stored revision so that the incident won't have to slow you down. 
-					In addition, there is an auto-save functionality so that if for some reason the internet connection is lost,
-					your work will be saved temporarily on the server till you can reconnect. 
+					Auto-save functionality will be incorporated so that if internet connection is lost,
+					your work will be saved temporarily on the server until you can reconnect. 
 				</p>
 			</li>
 			<li class="col-lg-12">
 				<p style="font-size:18px;">
 					Unique Resources: In order to help authors expand their stories there will be two major tools available,
-					the Task system and the Description Archive. Both tools will allow authors to view work submitted by contributors
+					the Task system and the Description Archive. These tools will allow authors to view work submitted by contributors
 					in order to help them get past any writers-block. But it is completely up to the author to choose how contributions
 					are incorporated into their story.
 				</p>
 			</li>
 			<li class="col-lg-12">
-				<p style="font-size:18px; padding-bottom: 40px;">
-					Security: built in copy-write API's will ensure that any contribution to your story is authentic and orginal.
+				<p style="font-size:18px; padding-bottom: 20px;">
+					<b style='color:rgb(255, 145, 0);'>Coming Soon - </b>Security: built in copy-write API's will ensure that any contribution to your story is authentic and original.
 					Likewise, this system will help alert you if your story is infringing on an copy-write violations. 
 				</p>
 			</li>
-			
+			</br>
+			<p style="font-size:15px; padding-bottom: 40px;"><b>Already have a story written?</b> If you already have a story and want to try for free publicity, just create a new blank story, copy and paste your work from
+			a text processor such as MS Word, save the story and you're done. </p>
+			</div>
 			
 			
 			<p class="col-lg-12" style="font-size:20px;">
@@ -79,16 +83,24 @@
 				that gives authors a chance to reach out to contributors for assistance with
 				small writing tasks. Benefits include...
 			</p>
+			
 			<li class="col-lg-12">
 				<p style="font-size:18px;">
-					Being able to focus on tasks that interest you, thus allowing you to work 
-					with tasks that are fun to work on.
+					No obligations: you are free to choose any task to complete, even if someone else has done that same task.
+					This will ensure that authors get a chance to pick what responses they like best for integration into their story.
+				</p>
+			</li>
+			<li class="col-lg-12">
+				<p style="font-size:18px;">
+					Creativity: Writers are reaching out to the public so they can find the most creative inspiring writers to
+					help complete their epic tales. Show off your skills with these brief tasks. 
 				</p>
 			</li>
 			<li class="col-lg-12">
 				<p style="font-size:18px; padding-bottom: 40px;">
-					No obligations, you are free to choose any task to complete, even if someone else has done that same task.
-					This will ensure that authors get a chance to pick what responses they like best for integration into their story.
+					Simplicity: Given just a quick background to the story and a short task requirement, it is up to
+					individual contributors to determine the length and completeness of their responses. These tasks will not feel
+					confining or intimidating to people who choose to contribute. 
 				</p>
 			</li>
 			

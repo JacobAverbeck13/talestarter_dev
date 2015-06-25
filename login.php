@@ -40,7 +40,7 @@ function login_form(){
 		print_header(); 
 
 	echo '
-	<div class="col-lg-7"></div><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br>
+	<div class="col-lg-7">
 	<h1>LogIn</h1>
 	<form action="" method="POST">
 	<table><tr>
@@ -53,7 +53,8 @@ function login_form(){
 	<button type="submit" class="btn btn-info" name="logIn" value="true">LogIn</button>
 	</td></tr></table>
 	</form>
-	</br></br></br></br><a href="signup.php" class="btn btn-info" role="button">Create Account</a>';
+	</br></br></br></br><a href="signup.php" class="btn btn-info" role="button">Create Account</a>
+	</div></br></br></br><a href="home.php" class="btn btn-info" role="button">< Home</a>';
 	
 }	
 ?>

@@ -2514,6 +2514,12 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
+.search {
+                padding:8px 15px;
+                background:rgba(160, 250, 243, 1);
+				color:#00184C;
+                border:0px solid #5BC0DE;
+}
 input[type="search"] {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;

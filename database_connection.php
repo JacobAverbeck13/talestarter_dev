@@ -1,5 +1,9 @@
 <?php
-
+	function sql_escape($text){
+	$mysqli = new mysqli("localhost", "ts_worker", "pass123", "talestarter_dev");	
+	$text = $mysqli->real_escape_string($text);
+	return $text;
+	}
 	
 	function db_select($query){
 		$mysqli = new mysqli("localhost", "ts_worker", "pass123", "talestarter_dev");
@@ -10,7 +14,6 @@
 		if($rtn){
 			return $rtn->fetch_assoc();
 		}else{
-			echo "SQL failed: (" . $mysqli->errno . ") " . $mysqli->error;
 			return false;
 		}
 		$mysqli->close();
@@ -29,7 +32,6 @@
 		if($rtn){
 			return $rtn;
 		}else{
-			echo "SQL failed: (" . $mysqli->errno . ") " . $mysqli->error;
 			return false;
 		}
 		$mysqli->close();
@@ -45,7 +47,6 @@
 		if($rtn){
 			return $mysqli->insert_id;
 		}else{
-			echo "SQL failed: (" . $mysqli->errno . ") " . $mysqli->error;
 			return false;
 		}
 		$mysqli->close();
@@ -60,7 +61,6 @@
 		if($rtn){
 			return true;
 		}else{
-			echo "SQL failed: (" . $mysqli->errno . ") " . $mysqli->error;
 			return false;
 		}
 		$mysqli->close();

@@ -6,7 +6,7 @@
 if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 	print_header();
 	if(isset($_POST['save']) && $_POST['save']=="true"){
-		$text = addslashes($_POST['s_text']);
+		$text = sql_escape($_POST['s_text']);
 		$story_info_id = $_SESSION['s_i']["s_info_id"];
 		if(validate_login($_SESSION["s_i"]["owner_id"],false)){ //make sure that you own this story
 			//add new story text in order to keep revisions
@@ -46,7 +46,6 @@ if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 	$story = db_select($query);
 	echo '
 	 <div class="container-fluid">
-	 <div class="col-lg-7"></div><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br>
 		<div class="row">
 			<div class="col-lg-12">
 			<style>
@@ -54,17 +53,22 @@ if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 				padding: 10px;
 			}
 			</style>
-			<h1>Edit '. stripslashes($story_info['title']).'</h1>
+			<h1>Edit '. $story_info['title'].'</h1>
 			<div class="col-lg-8">
 			<form action="" method="POST">
 				<table>
-				<tr><td><textarea class="ckeditor" cols="80" id="editor1" name="s_text" rows="10">'. stripslashes($story['text']).'</textarea></td></tr>
+				<tr><td><textarea class="ckeditor" cols="80" id="editor1" name="s_text" rows="10">'. $story['text'].'</textarea></td></tr>
 				<tr><td><button class="btn btn-info" role="button" name="save" value="true">Save</button></td></tr>
 				</table>
 				<hidden name="story_info_id" value="'.$story_info_id.'"></hidden>
 			</form>
 			</div>
+			<a href="home.php" class="btn btn-info" role="button">< Home</a></br></br></br></br>
 			<a href="story_view.php?s_id='.$story_info_id.'" class="btn btn-info" role="button">View</a>
+			</br>
+			</br>
+			</br>
+			<a href="story_info_edit.php?s_id='.$story_info_id.'" class="btn btn-info" role="button">Edit Story Info</a>
 			<script>
 				CKEDITOR.inline( "story-body" );
 			</script>

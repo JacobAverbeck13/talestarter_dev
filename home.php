@@ -9,11 +9,14 @@
 			<h1>".$_SESSION['username']."'s Home</h1></br>";
 	$query = "SELECT * FROM `story_info` WHERE `owner_id` = '".$_SESSION['user_id']."'";
 	$user_stories = db_select_multi($query);		
-	echo "<table class='col-lg-5'><th>Your Stories: Title</th><th>Options</th>";
+	echo "<table class='col-lg-5'><th>Your Stories: Title</th><th>Tags</th><th>Options</th>";
 	foreach($user_stories as $story){
 		echo "<tr>
 		<td>
 		".$story["title"]."
+		</td>
+		<td>
+		".$story["tags"]."
 		</td>
 		<td>
 		<a href='story_view.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>View</a>
@@ -32,6 +35,9 @@
 			<div class='col-lg-12'>
 			<h1>Welcome To TaleStarter</h1>
 			</br>
+			
+			<h2 style='color:rgb(255, 145, 0);'> Caution this site is still under construciton</h2></br></br>
+			
 			<p class='col-lg-5' style='font-size:18px;'>
 			&nbsp;&nbsp;&nbsp;&nbsp;
 					This website is designed to help writers quickly compose quality stories based

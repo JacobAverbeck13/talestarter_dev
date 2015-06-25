@@ -1,5 +1,5 @@
 <?php include "template.php"; print_header(); ?>
-<div class="col-lg-7"></div><a href="home.php" class="btn btn-info" role="button">< Home</a></br></br>
+<div class="col-lg-7">
 <h1>SignUp</h1>
 <?php
 if(isset($_POST['SignUp'])){
@@ -63,13 +63,13 @@ if(isset($_POST['SignUp'])){
 		echo '
 		<form action="" method="POST">
 	<table><tr>
-	<td style="padding: 10px;">Username</td> <td style="padding: 10px;"><input type="text" name="username"></td>
+	<td style="padding: 10px;">Username <p style="font-size:10px;">(Letters and white spaces only)</p></td> <td style="padding: 10px;"><input type="text" name="username"></td>
 	</tr>
 	<tr>
 	<td style="padding: 10px;">Email</td> <td style="padding: 10px;"><input type="text" name="email"></td>
 	</tr>
 	<tr>
-	<td style="padding: 10px;">Password:</td> <td style="padding: 10px;"><input type="password" name="pass"></td>
+	<td style="padding: 10px;">Password: <p style="font-size:10px;">(8-15 characters must have a letter and a number)</p></td> <td style="padding: 10px;"><input type="password" name="pass"></td>
 	</tr>
 	<tr>
 	<td style="padding: 10px;">Verify Password:</td> <td style="padding: 10px;"><input type="password" name="v_pass"></td>
@@ -80,5 +80,5 @@ if(isset($_POST['SignUp'])){
 	</form>';
 	}
 ?>
-
+</div></br></br></br><a href="home.php" class="btn btn-info" role="button">< Home</a>
 <?php print_footer();?>
