@@ -1,4 +1,8 @@
-<script>
+<?php
+	include "template.php";
+	print_header();
+	
+	echo '<script>
 
 function update(val){
 	var xmlHttp = new XMLHttpRequest();
@@ -8,11 +12,7 @@ function update(val){
 	
 }
 
-</script>
-
-<?php
-	include "template.php";
-	print_header();
+</script>';
 	
 	//$query = "SELECT * FROM `story_info` LIMIT 10";
 	$query = "select a.`s_info_id`, a.`owner_id`, a.`story_id`, a.`title`, a.`tags`, b.username 
