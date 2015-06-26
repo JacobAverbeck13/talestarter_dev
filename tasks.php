@@ -22,15 +22,19 @@
 			<div class='col-lg-8'>
 			<p style='font-size:16px;'> Search Title/Tags: <input type='search' class='search' placeholder='search...' oninput='update(this.value)'/>
 			</p></br></br></br></div>";
-			$query = "SELECT * FROM `tasks` LIMIT 25;";
+			$query = "select a.`id`, a.`story_id`, a.`title`, a.`tags`, b.`title` as `s_title`
+				FROM `tasks` a LEFT JOIN `story_info` b ON a.`story_id` = b.`s_info_id` LIMIT 20;";
 			$user_tasks = db_select_multi($query);	
 			echo "<div id='task_table' class='col-lg-12'>";	
 			if($user_tasks != false){
-			echo "<table class='col-lg-5'><th>Task: Title</th><th>Tags</th><th>Options</th>";
+			echo "<table class='col-lg-5'><th>Task: Title</th><th>Story</th><th>Tags</th><th>Options</th>";
 			foreach($user_tasks as $task){
 				echo "<tr>
 				<td>
 				".$task["title"]."
+				</td>
+				<td>
+				<a href='story_view.php?s_id='".$task["story_id"]."'>".$task["s_title"]."</a>
 				</td>
 				<td>
 				".$task["tags"]."

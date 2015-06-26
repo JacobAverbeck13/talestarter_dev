@@ -38,7 +38,7 @@ if(isset($_GET["t_id"]) && $_GET["t_id"] > 0){
 					}
 					</style>
 					<h1>'.$task["title"].'</h1></br>
-					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Title:</b> '.$story_info["title"].'</p>
+					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Title:</b> <a href="story_view.php?s_id='.$story_info["s_info_id"].'">'.$story_info["title"].'</a></p>
 					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Tags:</b> '.$story_info["tags"].'</p>
 					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Setting (When):</b> '.$story_info["when"].'</p>
 					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Setting (Where):</b> '.$story_info["where"].'</p>

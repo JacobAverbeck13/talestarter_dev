@@ -56,8 +56,8 @@ if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 			<div class="col-lg-8">
 			<form action="" method="POST">
 				<table>
-				<tr><td><textarea class="ckeditor" id="editor1" name="s_text"  cols="80" rows="10">'. $story['text'].'</textarea></td></tr>
-				<tr><td><button class="btn btn-info" role="button" name="save" value="true">Save</button></td></tr>
+				<tr><td><textarea class="ckeditor" id="editor1" onInput="updateSize()" name="s_text"  cols="80" rows="10">'. $story['text'].'</textarea></td></tr>
+				<tr><td><button class="btn btn-info" role="button" name="save" value="true">Save</button> <p style="font-size:10px;" id="story_size"></p></td></tr>
 				</table>
 				<hidden name="story_info_id" value="'.$story_info_id.'"></hidden>
 			</form>
@@ -69,7 +69,22 @@ if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 			</br>
 			<a href="story_info_edit.php?s_id='.$story_info_id.'" class="btn btn-info" role="button">Edit Story Info</a>
 			<script>
-				CKEDITOR.inline( "story-body" );
+				
+				window.onload = function() {
+					CKEDITOR.instances.editor1.on("change", function(){
+						try { 
+						updateSize(); 
+						} catch (ex) {
+						
+						}
+					});
+					var str = CKEDITOR.instances.editor1.getData();
+					document.getElementById("story_size").innerHTML = (str.length/1000).toFixed(2)+"/64 KB";
+				}
+				function updateSize(){
+					var str = CKEDITOR.instances.editor1.getData();
+					document.getElementById("story_size").innerHTML = (str.length/1000).toFixed(2)+"/64 KB";
+				}
 			</script>
 			</div>
 		</div>
