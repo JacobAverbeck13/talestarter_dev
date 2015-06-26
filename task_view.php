@@ -32,19 +32,20 @@ if(isset($_GET["t_id"]) && $_GET["t_id"] > 0){
 			<div class="row">
 				<div class="col-lg-8" >
 					<style>
-					p{
+					.underline{
 						font-size: 18px;
 						border-bottom: solid black 1px;
 					}
 					</style>
 					<h1>'.$task["title"].'</h1></br>
-					<p class="col-lg-12"><b class="col-lg-4">Story Title:</b> '.$story_info["title"].'</p>
-					<p class="col-lg-12"><b class="col-lg-4">Story Tags:</b> '.$story_info["tags"].'</p>
-					<p class="col-lg-12"><b class="col-lg-4">Story Setting (When):</b> '.$story_info["when"].'</p>
-					<p class="col-lg-12"><b class="col-lg-4">Story Setting (Where):</b> '.$story_info["where"].'</p>
+					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Title:</b> '.$story_info["title"].'</p>
+					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Tags:</b> '.$story_info["tags"].'</p>
+					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Setting (When):</b> '.$story_info["when"].'</p>
+					<p class="col-lg-12 underline" ><b class="col-lg-4">Story Setting (Where):</b> '.$story_info["where"].'</p>
 					<div class="col-lg-12"> </br></br></br></div>
-					<p class="col-lg-12"><b class="col-lg-4">Task Tags:</b> '.$task["tags"].'</p>
-					<p class="col-lg-12"><b class="col-lg-4">Task:</b> '.$task["task"].'</p>
+					<p class="col-lg-12 underline" ><b class="col-lg-4">Task Tags:</b> '.$task["tags"].'</p>
+					<div class="col-lg-12"> </br></br></div>
+					<p class="col-lg-12" style="font-size:20px;" ><b class="col-lg-4">Task:</b> '.$task["task"].'</p>
 				</div>
 				</br></br></br><a href="home.php" class="btn btn-info" role="button">< Home</a>
 				</br></br></br></br><a href="task_response.php?t_id='.$task["id"].'" class="btn btn-info" role="button">Respond</a>';
