@@ -31,21 +31,23 @@ function update(val){
 			</p></br></br></br>
 			</div><a href='home.php' class='btn btn-info' role='button'>< Home</a>
 			</div>";
+	if($user_stories != false){
 	echo "<div class='col-lg-12' id='d_table'><table class='col-lg-5'><th>Story Title</th><th>Author</th><th>Tags</th><th>Options</th>";
-	foreach($user_stories as $story){
-		echo "<tr>
-		<td>
-		".$story["title"]."</td> <td><a href='profile.php?user_id=".$story['owner_id']."' >".$story['username']."</a>
-		</td>
-		<td>
-		".$story["tags"]."
-		</td>
-		<td>
-		<a href='story_view.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>View</a>
-		</td>
-		</tr>";
+		foreach($user_stories as $story){
+			echo "<tr>
+			<td>
+			".$story["title"]."</td> <td><a href='profile.php?user_id=".$story['owner_id']."' >".$story['username']."</a>
+			</td>
+			<td>
+			".$story["tags"]."
+			</td>
+			<td>
+			<a href='story_view.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>View</a>
+			</td>
+			</tr>";
+		}
+		echo "</table>";
 	}
-
-	echo"</div></div></div>";
+	echo "</div></div></div>";
 	print_footer();
 ?>

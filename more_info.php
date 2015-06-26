@@ -69,7 +69,7 @@
 			<li class="col-lg-12">
 				<p style="font-size:18px; padding-bottom: 20px;">
 					<b style='color:rgb(255, 145, 0);'>Coming Soon - </b>Security: built in copy-write API's will ensure that any contribution to your story is authentic and original.
-					Likewise, this system will help alert you if your story is infringing on an copy-write violations. 
+					Likewise, this system will help alert you if your story is infringing on any copy-write violations. 
 				</p>
 			</li>
 			</br>

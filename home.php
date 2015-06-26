@@ -8,24 +8,49 @@
 			<div class='col-lg-12'>
 			<h1>".$_SESSION['username']."'s Home</h1></br>";
 	$query = "SELECT * FROM `story_info` WHERE `owner_id` = '".$_SESSION['user_id']."'";
-	$user_stories = db_select_multi($query);		
-	echo "<table class='col-lg-5'><th>Your Stories: Title</th><th>Tags</th><th>Options</th>";
-	foreach($user_stories as $story){
+	$user_stories = db_select_multi($query);	
+	if($user_stories != false){	
+		echo "<table class='col-lg-5'><th>Your Stories: Title</th><th>Tags</th><th>Options</th>";
+		foreach($user_stories as $story){
+			echo "<tr>
+			<td>
+			".$story["title"]."
+			</td>
+			<td>
+			".$story["tags"]."
+			</td>
+			<td>
+			<a href='story_view.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>View</a>
+			<a href='story_edit.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>Edit</a>
+			</td>
+			</tr>";
+		}
+		echo "</table>";
+	}
+	echo "<div class='col-lg-12'></br></br><a href='story_new.php' class='btn btn-info' role='button'>New Story</a></br></br></br></br></br></div>";
+	
+	$query = "SELECT * FROM `tasks` WHERE `owner_id` = '".$_SESSION['user_id']."'";
+	$user_tasks = db_select_multi($query);		
+	if($user_tasks != false){
+	echo "<table class='col-lg-5'><th>Your Tasks: Title</th><th>Tags</th><th>Options</th>";
+	foreach($user_tasks as $task){
 		echo "<tr>
 		<td>
-		".$story["title"]."
+		".$task["title"]."
 		</td>
 		<td>
-		".$story["tags"]."
+		".$task["tags"]."
 		</td>
 		<td>
-		<a href='story_view.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>View</a>
-		<a href='story_edit.php?s_id=".$story["s_info_id"]."' class='btn btn-info' role='button'>Edit</a>
+		<a href='task_view.php?t_id=".$task["id"]."' class='btn btn-info' role='button'>View</a>
+		<a href='task_edit.php?t_id=".$task["id"]."' class='btn btn-info' role='button'>Edit</a>
 		</td>
 		</tr>";
 	}
 	echo "</table>";
-	echo "<div class='col-lg-12'></br></br><a href='story_new.php' class='btn btn-info' role='button'>New Story</a></div>";
+		echo "</table>";
+	}
+	echo "<div class='col-lg-12'></br></br><a href='task_new.php' class='btn btn-info' role='button'>New Task</a></br></br></br></br></br></div>";
 	echo"</div></div></div>";
 	
 	}else{

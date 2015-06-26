@@ -17,7 +17,7 @@ if(isset($_SESSION["view"]) == false){
 	}
 	$_SESSION["view"] = time();
 }else{
-	if($_SESSION["view"] <= (time()-43200)){ //if it's been 12 hours since you last set your view add another.
+	if($_SESSION["view"] <= (time()-3600)){ //if it's been 12 hours since you last set your view add another.
 		$query = "SELECT * FROM `views` WHERE `time` > ".(time()-86400);		
 		$select = db_select($query);
 		if($select["id"] != false){
@@ -61,6 +61,7 @@ function print_header (){
 	$_SESSION["user_id"] = -1;
 	}
 	$user_id = $_SESSION["user_id"];
+	echo '<script src="ckeditor/ckeditor.js"></script>';
 	echo '<!DOCTYPE html>
 <html lang="en">
 

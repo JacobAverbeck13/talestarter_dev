@@ -1,7 +1,6 @@
 <?php
 	include "template.php";
 	validate_login(-1,true);
-	echo '<script src="ckeditor/ckeditor.js"></script>';
 	
 if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 	print_header();
@@ -57,7 +56,7 @@ if(isset($_GET['s_id']) && $_GET['s_id'] > 0){
 			<div class="col-lg-8">
 			<form action="" method="POST">
 				<table>
-				<tr><td><textarea class="ckeditor" cols="80" id="editor1" name="s_text" rows="10">'. $story['text'].'</textarea></td></tr>
+				<tr><td><textarea class="ckeditor" id="editor1" name="s_text"  cols="80" rows="10">'. $story['text'].'</textarea></td></tr>
 				<tr><td><button class="btn btn-info" role="button" name="save" value="true">Save</button></td></tr>
 				</table>
 				<hidden name="story_info_id" value="'.$story_info_id.'"></hidden>
