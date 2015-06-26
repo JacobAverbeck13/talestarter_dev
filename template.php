@@ -5,6 +5,32 @@ if(isset($_SESSION["user_id"]) == false){
 	$_SESSION["user_id"] = -1;
 }
 
+if(isset($_SESSION["view"]) == false){
+	$query = "SELECT * FROM `views` WHERE `time` > ".(time()-86400);		
+	$select = db_select($query);
+	if($select["id"] != false){
+		$query = "UPDATE `views` SET `views`=`views`+1 WHERE `id`= ".$select["id"].";";
+		$response = db_update($query);	
+	}else{
+		$query = "INSERT INTO `views`(`id`,  `views`) VALUES ('',  1);";
+		$response = db_update($query);	
+	}
+	$_SESSION["view"] = time();
+}else{
+	if($_SESSION["view"] <= (time()-43200)){ //if it's been 12 hours since you last set your view add another.
+		$query = "SELECT * FROM `views` WHERE `time` > ".(time()-86400);		
+		$select = db_select($query);
+		if($select["id"] != false){
+			$query = "UPDATE `views` SET `views`=`views`+1 WHERE `id`= ".$select["id"].";";
+			$response = db_update($query);	
+		}else{
+			$query = "INSERT INTO `views`(`id`, `views`) VALUES ('', 1);";
+			$response = db_update($query);	
+		}
+	}
+	$_SESSION["view"] = time();
+}
+
 $url_base = $_SERVER['SERVER_NAME'];
 
 function validate_login($userid, $redirect){
