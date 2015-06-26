@@ -27,8 +27,8 @@
 			</li>
 			<li class="col-lg-12">
 				<p style="font-size:18px;">
-					Many people enjoy reading new and upcoming stories, so <b>TaleStarter</b> gives visitors
-					the opportunity to read and rate newly released stories written by people like you!
+					Many people enjoy reading new and upcoming stories. <b>TaleStarter</b> gives visitors
+					the opportunity to read and rate newly created stories for free!
 					
 				</p>
 			</li>
@@ -83,7 +83,7 @@
 				that gives authors a chance to reach out to contributors for assistance with
 				small writing tasks. Benefits include...
 			</p>
-			
+			<div class="col-lg-12">
 			<li class="col-lg-12">
 				<p style="font-size:18px;">
 					No obligations: you are free to choose any task to complete, even if someone else has done that same task.
@@ -103,13 +103,14 @@
 					confining or intimidating to people who choose to contribute. 
 				</p>
 			</li>
-			
+			</div>
 			
 			
 			<p class="col-lg-12" style="font-size:20px; padding-bottom: 40px;">
 				<strong>Readers</strong>: TaleStarter provides visitors with the opportunity to read a wide
 				variety of stories. You can show your support by rating stories that you have read.
-				This is highly important because it gives writers feedback as well as helping to identify talented writers.
+				This is highly important because it gives writers feedback as well as helping the public
+				identify talented writers.
 				</br></br>
 				<!--In the future it will be possible for readers to donate to the causes of these writers to help them generate
 				the money required to hire professional editors and publishers. So that readers can say they helped get a story published. -->

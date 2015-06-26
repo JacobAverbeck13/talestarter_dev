@@ -4,7 +4,7 @@
 			//$query = "SELECT * FROM `story_info` LIMIT 10";
 	$query = "select a.`s_info_id`, a.`owner_id`, a.`story_id`, a.`title`, a.`tags`, b.username 
 				FROM story_info  a 
-				LEFT JOIN users b ON a.`owner_id` = b.id WHERE a.`title` LIKE '%".sql_escape($_GET["search"])."%' OR a.`tags` LIKE '%".sql_escape($_GET["search"])."%' LIMIT 10;";
+				LEFT JOIN users b ON a.`owner_id` = b.id WHERE a.`title` LIKE '%".sql_escape($_GET["search"])."%' OR a.`tags` LIKE '%".sql_escape($_GET["search"])."%' LIMIT 20;";
 	$user_stories = db_select_multi($query);	
 		
 		
@@ -12,7 +12,7 @@
 	//$query = "SELECT * FROM `story_info` LIMIT 10";
 	$query = "select a.`s_info_id`, a.`owner_id`, a.`story_id`, a.`title`, a.`tags`, b.username 
 				FROM story_info  a 
-				LEFT JOIN users b ON a.`owner_id` = b.id LIMIT 10;";
+				LEFT JOIN users b ON a.`owner_id` = b.id LIMIT 20;";
 	$user_stories = db_select_multi($query);		
 	}
 	echo "
